@@ -24,8 +24,8 @@ export const variables = {
 
   // Font Sizes
   fontSizeSmall: '1.2rem',
-  fontSizeMedium: '1.4rem',
-  fontSizeLarge: '1.6rem',
+  fontSizeMedium: '2.4rem',
+  fontSizeLarge: '4.6rem',
 
   // Font Weights
   fontWeightLight: 300,

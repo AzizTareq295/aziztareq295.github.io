@@ -2,9 +2,11 @@ import styled from 'styled-components'
 import { variables } from 'Styles/utils/variables'
 
 export const HeaderComponent = styled.header`
-  background-color: ${props => props.theme.backgroundColor};
+  background-color: transparent;
   width: 100%;
   height: 80px;
+  position: fixed;
+  top: 0;
 `;
 
 export const Logo = styled.div`
