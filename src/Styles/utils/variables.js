@@ -17,7 +17,8 @@ export const variables = {
     }
   },
   
-  
+  primaryColor: '#041C32',
+  secondaryColor: '#ECB365',
 
   // Fonts
   fontFamily: "'Source Sans Pro', sans-serif",

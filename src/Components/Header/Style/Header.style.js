@@ -21,6 +21,20 @@ export const Logo = styled.div`
   }
 `;
 
+export const HeaderMenu = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-end;
+  gap: 20px;
+
+  & span{
+    color: ${props => props.theme.menuColor};
+    cursor: pointer;
+  }
+`;
+
 export const HeaderNav = styled.nav`
   width: 100%;
   height: 100%;
