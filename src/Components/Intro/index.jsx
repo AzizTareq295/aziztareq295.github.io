@@ -7,7 +7,10 @@ const Intro = () => {
     <IntroComponent>
       <div className='intro-title'>
         <span>Frontend Developer</span>
-        <h1>Tareq Aziz</h1>
+        <h1>
+          {/* <span area-hidden="true">Tareq Aziz</span> */}
+          Tareq Aziz
+        </h1>
       </div>
       <div className='bio-pic'>
         <div className='image-wrapper'>

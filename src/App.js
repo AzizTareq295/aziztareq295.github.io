@@ -7,24 +7,25 @@ import Menu from 'Components/Menu'
 import { GlobalStyle } from 'Styles/Global.style'
 import { MyPortfolio } from 'Styles/Layout.style'
 import { variables } from 'Styles/utils/variables'
-import PortfolioProvider, { PortfolioContext } from 'context/PortfolioProvider'
+import { PortfolioContext } from 'context/PortfolioProvider'
 
 
 function App() {
+  const { isDarkMode, isMenuOpen } = useContext(PortfolioContext)
 
+  const theme = isDarkMode ? variables.theme.dark : variables.theme.light
 
   return (
-    <PortfolioProvider>
-      <ThemeProvider theme={variables.theme.light}>
-        <GlobalStyle />
-        <MyPortfolio>
-          <Header />
-          <Intro />
-          <Footer />
-            <Menu />
-        </MyPortfolio>
-      </ThemeProvider>
-    </PortfolioProvider>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <MyPortfolio>
+        <Header />
+        <Intro />
+        <Footer />
+        
+        <Menu />
+      </MyPortfolio>
+    </ThemeProvider>
   );
 }
 

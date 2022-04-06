@@ -2,25 +2,78 @@ import styled from 'styled-components';
 import { variables } from 'Styles/utils/variables';
 
 export const MenuWrapper = styled.div`
-  width: 320px;
+  width: 0;
   height: 100vh;
   position: fixed;
   top: 0;
-  right: 0;
+  right: -100%;
   box-shadow: -5px 0px 8px -4px #ccc;
   background-color: rgb(239 254 255 / 97%);
   padding: 20px;
-  transition: all 0.3s ease-in-out;
+  transition: 
+    width 0.8s ease-in-out,
+    right 0.8s ease-in-out;
 
-  .close-menu {
-    position: absolute;
-    left: -45px;
-    background: rgb(239 254 255 / 97%);
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px 0px 0px 5px;
-    box-shadow: -5px 0px 8px 0px #ccc;
-    top: 26px;
+  &.active-menu{
+    width: 320px;
+    right: 0;
+  }
+
+  .menu-header{
+    width: 100%;
+
+    & .menu-close{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      > span{
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        &::before{
+          content: '';
+          width: 0;
+          height: 0;
+          background-color: ${variables.secondaryColor};
+          border-radius: 50%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          position: absolute;
+          z-index: -1;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:hover{
+          &::before{
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    } 
+
+    .menu-intro{
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+
+      & img{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      & h4{
+        color: ${variables.secondaryColor};
+        font-size: ${variables.fontSizeSmall};
+      }
+    }
   }
 
   nav{
@@ -37,7 +90,7 @@ export const MenuWrapper = styled.div`
           text-decoration: none;
           display: block;
           padding: 10px;
-          font-size: ${variables.fontSizeMedium};
+          font-size: ${variables.fontSizeSmall};
           text-shadow: 0px 0px 0px ${variables.secondaryColor};
           transition: all 0.3s ease-in-out;
 

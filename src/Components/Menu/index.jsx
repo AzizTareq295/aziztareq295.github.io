@@ -2,17 +2,24 @@ import React, { useContext } from 'react'
 import { MenuWrapper } from './Style/Menu.style'
 import { MdClose } from 'react-icons/md'
 import { PortfolioContext } from 'context/PortfolioProvider'
+import ProfileImage from 'assets/images/my_image.png'
 
 const Menu = () => {
 
-  const { toggleMenu } = useContext(PortfolioContext);
+  const { toggleMenu, isMenuOpen } = useContext(PortfolioContext);
 
   return (
-    <MenuWrapper>
-      <div className='close-menu'>
-        <span onClick={toggleMenu}>
-          <MdClose size={25} />
-        </span>
+    <MenuWrapper className={isMenuOpen ? 'active-menu' : ''}>
+      <div className='menu-header'>
+        <div className='menu-close'>
+          <span onClick={toggleMenu}>
+            <MdClose size={25} />
+          </span>
+        </div>
+        <div className='menu-intro'>
+          <img src={ProfileImage} alt="profile" />
+          <h4>Hi, I'm <span>Tareq Aziz</span></h4>
+        </div>
       </div>
       <nav>
         <ul>

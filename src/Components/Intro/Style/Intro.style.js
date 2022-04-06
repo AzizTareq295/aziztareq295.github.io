@@ -4,17 +4,28 @@ import { variables } from 'Styles/utils/variables';
 export const IntroComponent = styled.div`
   width: 100%;
   height: 100vh;
-  background-color: rgba(255,255,255,.5);
+  background-color: ${props => props.theme.backgroundColor};
   display:flex;
   align-items:center;
   justify-content: center;
   gap: 50px;
+  transition: all 0.3s ease-in-out;
 
   .intro-title{
     h1{
       color: ${props => props.theme.textColor};
       font-size: ${variables.fontSizeLarge};
-      font-weight: ${variables.fontWeightBold}
+      font-weight: ${variables.fontWeightBold};
+      position: relative;
+
+      & > span{
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: ${variables.fontSizeLarge};
+        z-index: 0;
+        clip-path: polygon(0 0, 100% 0, 35% 75%, 0 100%);
+      }
     }
 
     span{
@@ -35,6 +46,7 @@ export const IntroComponent = styled.div`
         animation: animateBorder 8s ease-in-out infinite 1s;
         box-sizing: border-box;
         box-shadow: 0px 0px 9px 1px #eee;
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
       }
 
       @keyframes animateBorder{

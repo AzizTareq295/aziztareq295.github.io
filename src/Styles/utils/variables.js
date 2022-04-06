@@ -10,8 +10,8 @@ export const variables = {
     },
     dark:{
       backgroundColor: '#000',
-      primaryColor: '#ECB365',
-      secondaryColor: '#041C32',
+      primaryColor: '#041C32',
+      secondaryColor: '#ECB365',
       textColor: '#fff',
       menuColor: '#fff'
     }
