@@ -8,7 +8,6 @@ const Intro = () => {
       <div className='intro-title'>
         <span>Frontend Developer</span>
         <h1>
-          {/* <span area-hidden="true">Tareq Aziz</span> */}
           Tareq Aziz
         </h1>
       </div>

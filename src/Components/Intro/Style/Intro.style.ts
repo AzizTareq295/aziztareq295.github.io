@@ -18,16 +18,8 @@ export const IntroComponent = styled.div`
       font-weight: ${variables.fontWeightBold};
       position: relative;
 
-      & > span{
-        position: absolute;
-        top: 0;
-        left: 0;
-        font-size: ${variables.fontSizeLarge};
-        z-index: 0;
-        clip-path: polygon(0 0, 100% 0, 35% 75%, 0 100%);
-      }
     }
-
+   
     span{
       color: ${props => props.theme.secondaryColor};
       font-size: ${variables.fontSizeMedium};

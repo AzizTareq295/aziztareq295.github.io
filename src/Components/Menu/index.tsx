@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import { MenuWrapper } from './Style/Menu.style'
 import { MdClose } from 'react-icons/md'
-import { PortfolioContext } from 'context/PortfolioProvider'
+import { PortfolioContext, IPortfolioContext } from 'context/PortfolioProvider'
 import ProfileImage from 'assets/images/my_image.png'
 
 const Menu = () => {
 
-  const { toggleMenu, isMenuOpen } = useContext(PortfolioContext);
+  const { toggleMenu, isMenuOpen } = useContext(PortfolioContext) as IPortfolioContext;
 
   return (
     <MenuWrapper className={isMenuOpen ? 'active-menu' : ''}>

@@ -4,11 +4,12 @@ import { HeaderComponent, Logo, HeaderMenu } from './Style/Header.style'
 import logoImage from 'assets/images/signature.png'
 import { BsMoon, BsSun } from 'react-icons/bs'
 import { FiMenu } from 'react-icons/fi'
-import { PortfolioContext } from 'context/PortfolioProvider'
+import { PortfolioContext, IPortfolioContext } from 'context/PortfolioProvider'
 
 const Header = () => {
 
-  const { toggleMenu, isDarkMode, toggleDarkMode } = useContext(PortfolioContext);
+  const { toggleMenu, isDarkMode, toggleDarkMode } = useContext<IPortfolioContext>(PortfolioContext);
+
 
   return (
     <HeaderComponent>
@@ -25,13 +26,13 @@ const Header = () => {
             <span className='header-action' onClick={toggleDarkMode}>
               {
                 isDarkMode ?
-                <BsMoon size={25} />
-                :
                 <BsSun size={25} />
+                :
+                <BsMoon size={25} />
               }
             </span>
             <span className='header-action' onClick={toggleMenu}>
-              <FiMenu size={25} />
+              <FiMenu size={30} />
             </span>
           </HeaderMenu>
           

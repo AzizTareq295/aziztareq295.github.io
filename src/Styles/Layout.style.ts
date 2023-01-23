@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 import { variables } from './utils/variables'
 
+interface Props {
+  width?: string,
+}
+
 export const MyPortfolio = styled.div`
 
 `;
@@ -29,6 +33,17 @@ export const PageContainer = styled.div`
   }
 `;
 
-export const PageSection = styled.div`
+export const PageSection = styled.div<Props>`
   width: ${props => props.width || '100%'};
+
+  .page-header{
+
+    h2{
+      color: ${props => props.theme.textColor};
+      font-size: ${variables.fontSizeMedium};
+      font-weight: ${variables.fontWeightBold};
+      text-transform: uppercase;
+    }
+  }
+
 `;
